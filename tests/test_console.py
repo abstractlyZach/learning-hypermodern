@@ -14,7 +14,8 @@ def mock_wikipedia_random_page(mocker):
     return mocker.patch("learning_hypermodern.wikipedia.random_page")
 
 
-def test_main_succeeds(runner, mock_requests_get):
+@pytest.mark.e2e
+def test_main_succeeds_in_production_env(runner, mock_requests_get):
     result = runner.invoke(console.main)
     assert result.exit_code == 0
 
@@ -29,7 +30,7 @@ def test_main_invokes_requests_get(runner, mock_requests_get):
     assert mock_requests_get.called
 
 
-def test_main_users_en_wikipedia_org(runner, mock_requests_get):
+def test_main_uses_en_wikipedia_org(runner, mock_requests_get):
     result = runner.invoke(console.main)
     args, _ = mock_requests_get.call_args
     assert "en.wikipedia.org" in args[0]
