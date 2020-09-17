@@ -1,7 +1,9 @@
 [flake8]
-select = B,B9,BLK,C,E,F,I,W
+select = B,B9,BLK,C,E,F,I,S,W
 ignore = E203,E501,W503
 max-line-length = 90
 max-complexity = 10
 application-import-names = learning_hypermodern,tests
 import-order-style = google
+# prevent bandit from flagging asserts in tests
+per-file-ignores = tests/*:S101
