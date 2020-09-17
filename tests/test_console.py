@@ -1,6 +1,7 @@
 import click.testing
 import pytest
 import requests
+
 from learning_hypermodern import console
 
 
