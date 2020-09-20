@@ -30,6 +30,7 @@ flake8-import-order = "^0.18.1"
 safety = "^1.9.0"
 mypy = "^0.782"
 pytype = {version = "^2020.9.16", python = "3.7"}
+flake8-annotations = "^2.4.0"
 
 [tool.poetry.scripts]
 learning-hypermodern = "learning_hypermodern.console:main"
